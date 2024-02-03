@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel = "stylesheet" href = "logins.css">
+  <title>login</title>
+</head>
+<body>
+  <div class="net">
+    <div class="login-frame">
+      <div class="form-frame">
+        <h1>Login</h1>
+        <form action="" name="login">
+          <input type="text" id="username" name="username" placeholder="User Name">
+          <input type="password" id="password" name="password" placeholder="Password">
+        </form>
+        <div class="buttons">
+          <button onclick="return validator()">SignIn</button>
+          <a href="SignUp.html"><button>SignUp</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="popup" id="popup">
+    <div class="content" id="content"></div>
+    <button class="close" onclick="validator()"> Close </button>
+  </div>
+ <script type="text/javascript">
+function validator(){
+  var username = document.forms["login"]["username"].value;
+  var password = document.forms["login"]["password"].value;
+  var popup = document.getElementsByClassName("popup")[0];
+  var content = document.getElementsByClassName("content")[0];
+  var nt = document.getElementsByClassName("login-frame")[0];
+  if(username !== "user1234" || password !== "1234567A"){
+    content.innerHTML = "Invalid UserName Or Password"
+    popup.classList.toggle('active');
+    nt.classList.toggle('lf');
+    return false;
+  }
+  else {
+        window.location.href = "index.html"; 
+      }
+}
+  </script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: #222;
+}
+.calculate,.result {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.result{
+    display: none;
+}
+.calculate .title{
+
+    font-size: 6.5vmin;
+    font-weight: bold;
+    font-family: sans-serif;
+    background: -webkit-linear-gradient(45deg,#ff7400,#f4511e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.calculate .gender{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 75%;
+}
+.calculate .gender div{
+    height: 32vmin;
+    width: 32vmin;
+    background: #232323;
+    box-shadow: 0 .5vmin 1vmin .6vmin #292929;
+    font-size: 20vmin;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center;
+    line-height: 32vmin;
+} 
+.calculate .gender div span{
+    background: #fff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    cursor: pointer;
+}
+.calculate .gender .male span {
+   background-color: blueviolet;
+   
+    -webkit-text-fill-color: transparent;
+}
+.calculate .gender .female  span {
+    background-color: brown;
+ 
+    -webkit-text-fill-color: transparent;
+}
+.calculate .height,
+.calculate .weight{
+    margin-top: 4vmin;
+    width: 75%;
+    height: 32vmin;
+    background: #232323;
+    box-shadow: 0 .5vmin 1vmin .6vmin #292929;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    font-size: 5vmin;
+    font-weight: bold;
+    font-family: sans-serif;
+    color:#555;
+    cursor: pointer;
+
+}
+.calculate .height .val,
+.calculate .weight .val{
+    color: #fff;
+    font-size: 5vmin;
+    margin: 0;
+    margin-top: -2vmin;
+    cursor: pointer;
+}
+.calculate .height .val i,
+.calculate .weight .val i{
+    text-align: center;
+    line-height: 6vmin;
+    font-size: 5vmin;
+    font-weight: bold;
+    padding: 3vmin;
+    cursor: pointer;
+}
+.calculate .height .val span,
+
+.calculate .weight .val span{
+    font-size: 6vmin;
+    font-weight: bold;
+    font-family: sans-serif;
+    cursor: pointer;
+}
+.calculate .height input,
+.calculate .weight input{
+    -webkit-appearance: none;
+    width: 90%;
+    height: 3vmin;
+    background: #333;
+    border-radius: 50vmin;
+    overflow: hidden;
+    cursor: pointer;
+}
+.calculate .height input::-webkit-slider-thumb,
+.calculate .weight input::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width: 3vmin;
+    height: 3vmin;
+    background: linear-gradient(45deg,#ff7400,#f4511e);
+    box-shadow: -50vmin 0 0 50vmin #f4511e;
+}
+
+.calculate .calc,
+.result .recalc{
+    height: 14vmin;
+    width: 75%;
+    line-height: 14vmin;
+    margin-top: 6vmin;
+    color: white;
+    font-size: 5vmin;
+    font-weight: bold;
+    font-family: sans-serif;
+    background: #232323;
+    box-shadow: 0 .5vmin 1vmin .6vmin #292929;
+    text-align: center;
+    cursor: pointer;
+}
+.calculate .calc :hover,
+.result .recalc :hover{
+    color:#f4511e;
+}
+.result .recalc{
+    margin-top: 20vmin;
+}
+.result .bmi{
+    height: 40vmin;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #232323;
+    box-shadow: 0 .5vmin 1vmin .6vmin #292929;
+    margin-top: 5vmin;
+    cursor: pointer;
+}
+.result .bmi .title{
+    color:#555;
+    font-size: 6.5vmin;
+    font-weight: bold;
+    font-family: sans-serif;
+    cursor: pointer;
+}
+.result .bmi .val{
+    font-size: 7vmin;
+    font-weight: bold;
+    font-family: sans-serif;
+   color: #fff;
+   cursor: pointer;
+}
+.result .text{
+    font-size: 5vmin;
+    font-weight: bold;
+    font-family: sans-serif;
+   color: #fff;
+   width: 75%;
+   text-align: center;
+   margin-top: 20vmin;
+   cursor: pointer;
+
+}

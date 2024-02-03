@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel = "stylesheet" href = "SignUp.css">
+  <title>SignUp Page</title>
+</head>
+<body>
+  <div class="login-frame">
+    <div class="form-frame">
+      <h1 style="margin-bottom: 60px;">Sign Up</h1>
+      <div class="forms">
+        <form name="signup" onsubmit="return validator()">
+          <input type="text" id="username" name="username" placeholder="User Name">
+          <input type="password" id="password" name="password" placeholder="Password">
+          <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password">
+          <input type="email" id="email" name="email" placeholder="example@gmail.com">
+        </form>
+      </div>
+      <div class="buttons">
+        <button onclick="validator()" class="button">SignUp</button>
+      </div>
+    </div>
+  </div>
+  <div class="popup" id="popup">
+    <div class="content">
+    </div>
+    <button onclick="validator()" class="close">Close</button>
+  </div>
+  <script type="text/javascript">
+  function validator() {
+  var username = document.forms["signup"]["username"].value;
+  var password = document.forms["signup"]["password"].value;
+  var confirmPassword = document.forms["signup"]["confirmPassword"].value;
+  var popup = document.getElementsByClassName("popup")[0];
+  var login = document.getElementsByClassName("login-frame")[0];
+  var content = document.getElementsByClassName("content")[0];
+  var email = document.forms["signup"]["email"].value;
+  
+  if (username === "") {
+    content.innerHTML = "Please enter a username";
+    popup.classlist.toggle('active');
+    login.classList.toggle('lf');
+    return false;
+  }
+  
+  if (password === "") {
+    content.innerHTML = "Please enter a password";
+    popup.classList.toggle('active');
+    login.classList.toggle('lf');
+    return false;
+  }
+  
+  if (password.length < 8) {
+    content.innerHTML = "Password should be at least 8 characters long";
+    popup.classList.toggle('active');
+    login.classList.toggle('lf');
+    return false;
+  }
+  
+  if (!/[A-Z]/.test(password)) {
+    content.innerHTML = "Password should contain at least one capital letter";
+    popup.classList.toggle('active');
+    login.classList.toggle('lf');
+    return false;
+  }
+  
+  if (password !== confirmPassword) {
+    content.innerHTML = "Password and confirm password do not match";
+    popup.classList.toggle('active');
+    login.classList.toggle('lf');
+    return false;
+  }
+
+  const emailR = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
+  if (!emailR.test(email)){
+    content.innerHTML = "Invalid Email";
+    popup.classList.toggle('active');
+    login.classList.toggle('lf');
+  }
+  
+  else{
+    popup.classList.style = 'none';
+    window.location.href = "LOG.html";
+
+  }
+}
+  </script>
+</body>
+</html>
